@@ -2,31 +2,31 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: #444654; 
+    background-color: #444654;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff; 
+    color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
-   .header {
-        background-color: #343541;
-        color: #ffffff;
-        padding: 15px 0;
-        text-align: center;
-        font-size: 1em;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-    }
+.header {
+    background-color: #343541;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-    .container {
-        padding-top: 80px;  
-        height: calc(100vh - 80px - 60px);
-        overflow-y: auto;
-    }
+.container {
+    padding-top: 80px;
+    height: calc(100vh - 80px - 60px);
+    overflow-y: auto;
+}
 
 .chat-container {
     font-family: Arial, sans-serif;
@@ -45,16 +45,16 @@ body {
 .typing-indicator {
     display: inline-block;
     position: relative;
-    width: 50px; /* Reduced width */
-    height: 15px; /* Reduced height */
+    width: 50px;
+    height: 15px;
 }
 
 .typing-indicator span {
     display: inline-block;
     position: absolute;
     bottom: 0;
-    width: 10px; /* Smaller bubble */
-    height: 10px; /* Smaller bubble */
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #333;
     animation: bounce 0.6s infinite alternate;
@@ -66,7 +66,7 @@ body {
 }
 
 .typing-indicator span:nth-child(2) {
-    left: 15px; /* Adjusted position */
+    left: 15px;
     animation-delay: 0.4s;
 }
 
@@ -75,97 +75,66 @@ body {
     animation-delay: 0.6s;
 }
 
-
 .chat-input-container {
-    #chatInput {
-        width: 85%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        flex-grow: 1;
-        background: linear-gradient(to top, rgba(38, 38, 46, 1), rgba(38, 38, 46, 0.6), transparent);
-        color: #fff;   // White text color for better visibility against the dark background
-        outline: none; // Optional: Removes the blue outline that browsers place on focused input elements
-
-        &::placeholder {
-            color: rgba(255, 255, 255, 0.6); // Light white for the placeholder text
-        }
-
-        &:focus {
-            border-color: rgba(255, 255, 255, 0.5); // Light white border on focus
-        }
-    }
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
 
 #chatInput {
-    width: 85%;
-    padding: 10px;
+    width: 100%;
+    padding-right: 60px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: linear-gradient(to top, rgba(38, 38, 46, 1), rgba(38, 38, 46, 0.6), transparent);
+    color: #fff;
+    outline: none;
+}
+
+#chatInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#chatInput:focus {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 #sendButton {
-    background-color: #2f2f2f;
-    color: #ffffff;
-    padding: 10px 15px;
+    position: absolute;
+    right: 5px;  /* Position to the right with a slight margin */
+    top: 50%;
+    transform: translateY(-50%);  /* Vertically center the button */
+    padding: 5px 10px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
 
-    &:hover {
-        background-color: #1e1e1e;
-    }
+#sendButton:hover {
+    background-color: #1e1e1e;
 }
 
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(38, 38, 46, 1), rgba(38, 38, 46, 0.6), transparent); // Dark gray to transparent gradient
-    padding: 20px 10px;  // Increase vertical padding for higher footer
+    background: linear-gradient(to top, rgba(38, 38, 46, 1), rgba(38, 38, 46, 0.6), transparent);
+    padding: 20px 10px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .chat-input-container {
-        width: 65%;         // Makes the input container take 65% of the viewport's width
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px; // Adds a little space between input and disclaimer
-
-        #chatInput {
-            width: 85%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            flex-grow: 1;  // Allows the input to take available space
-        }
-
-        #sendButton {
-            background-color: #2f2f2f;
-            color: #ffffff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: #1e1e1e;
-            }
-        }
-    }
-
-    .disclaimer {
-        color: #888;           // Gives a lighter color to the disclaimer
-        font-size: 0.9em;      // Reduces font size slightly
-        text-align: center;    // Centers the text
-        max-width: 90%;        // Doesn't let the disclaimer stretch too wide
-        margin-top: 5px;       // Adds a little space above the disclaimer
-    }
 }
 
+.footer .disclaimer {
+    color: #888;
+    font-size: 0.9em;
+    text-align: center;
+    max-width: 90%;
+    margin-top: 5px;
+}
 
 @keyframes bounce {
     0% {
