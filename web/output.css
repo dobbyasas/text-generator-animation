@@ -2,10 +2,28 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #444654; /* Grey background */
+  background-color: #444654;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #343541;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1em;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  padding-top: 80px;
 }
 
 .chat-container {
@@ -25,16 +43,16 @@ body {
 .typing-indicator {
   display: inline-block;
   position: relative;
-  width: 70px;
-  height: 20px;
+  width: 50px; /* Reduced width */
+  height: 15px; /* Reduced height */
 }
 
 .typing-indicator span {
   display: inline-block;
   position: absolute;
   bottom: 0;
-  width: 15px;
-  height: 15px;
+  width: 10px; /* Smaller bubble */
+  height: 10px; /* Smaller bubble */
   border-radius: 50%;
   background-color: #333;
   animation: bounce 0.6s infinite alternate;
@@ -46,7 +64,7 @@ body {
 }
 
 .typing-indicator span:nth-child(2) {
-  left: 25px;
+  left: 15px; /* Adjusted position */
   animation-delay: 0.4s;
 }
 
