@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #444654; /* Grey background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-container {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.chat-gpt-text {
+  margin-bottom: 10px;
+}
+
+.typing-indicator {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 20px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.typing-indicator span:nth-child(1) {
+  left: 0;
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(2) {
+  left: 25px;
+  animation-delay: 0.4s;
+}
+
+.typing-indicator span:nth-child(3) {
+  right: 0;
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
